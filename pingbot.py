@@ -20,7 +20,7 @@ def handle(args, ch):
         return True
     elif args[0] == "off":
         active = False
-        return flase
+        return False
     elif args[0] == "ping":
         u = "@" + args[1]
         delay = "0s"

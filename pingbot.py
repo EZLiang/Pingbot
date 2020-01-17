@@ -17,8 +17,10 @@ def handle(args, ch):
     global active
     if args[0] == "on":
         active = True
+        return True
     elif args[0] == "off":
         active = False
+        return flase
     elif args[0] == "ping":
         u = "@" + args[1]
         delay = "0s"
@@ -28,10 +30,13 @@ def handle(args, ch):
         def ping():
             await ch.send(u)
         timer = threading.Timer(parse(delay), ping)
+        timer.run()
+        return False
     elif args[0] == "spam":
         u = "@" + args[1]
         for i in range(int(args[2])):
             await ch.send(u)
+        return False
 
 
 @client.event

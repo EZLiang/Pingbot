@@ -27,15 +27,15 @@ def handle(args, ch):
         if len(args) > 2:
             delay = args[2]
 
-        def ping():
-            ch.send(u)
+        async def ping():
+            await ch.send(u)
         timer = threading.Timer(parse(delay), ping)
         timer.run()
         return False
     elif args[0] == "spam":
         u = "@" + args[1]
-        def ping():
-            ch.send(u)
+        async def ping():
+            await ch.send(u)
         for i in range(int(args[2])):
             ping()
         return False

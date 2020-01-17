@@ -1,4 +1,11 @@
 # Pingbot
 An autopingspam bot for Discord
 
-[Add Me!](https://discordapp.com/api/oauth2/authorize?client_id=667543727937552405&permissions=0&scope=bot)
+~~The most annoying bot _ever_~~
+
+Commands```
+@Pingbot on - turn on autoping
+@Pingbot off - turn off autoping
+@Pingbot ping user delay=0s - ping @user after delay
+@Pingbot spam user length - ping @user length times
+```

@@ -1,4 +1,4 @@
 # Pingbot
 An autopingspam bot for Discord
 
-[Add Me!](https://discordapp.com/api/oauth2/authorize?client_id=667123217047224340&permissions=0&scope=bot)
+[Add Me!](https://discordapp.com/api/oauth2/authorize?client_id=667543727937552405&permissions=0&scope=bot)

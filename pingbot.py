@@ -1,6 +1,5 @@
-import discord
-import sys
-import threading
+import discord, sys, asyncio
+
 
 client = discord.Client()
 
@@ -27,17 +26,27 @@ def handle(args, ch):
         if len(args) > 2:
             delay = args[2]
 
+        async def warn():
+            if "#" in args[1]:
+                await ch.send("Pinging {} in {}".format(args[1].split("#")[0], delay))
+            elif args[1][-1] in "aeiou":
+                await ch.send("Pinging {}s far and wide in {}".format(args[1], delay))
+            else:
+                await ch.send("Pinging {}es far and wide in {}".format(args[1], delay))
+        asyncio.run(warn())
+
         async def ping():
+            await asyncio.sleep(parse(delay))
             await ch.send(u)
-        timer = threading.Timer(parse(delay), ping)
-        timer.run()
+        asyncio.run(ping())
         return False
     elif args[0] == "spam":
         u = "@" + args[1]
+
         async def ping():
             await ch.send(u)
         for i in range(int(args[2])):
-            ping()
+            asyncio.run(ping())
         return False
 
 
